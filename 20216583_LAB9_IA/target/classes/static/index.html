@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stf-Puzzle Simplified Version | LAB09</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <span class="eyebrow">STFGAMES · GTICS · LAB09</span>
+      <h1>Stf-Puzzle <span>Simplified Version</span></h1>
+      <p class="subtitle">Ordena la imagen moviendo únicamente las piezas adyacentes al espacio vacío.</p>
+    </header>
+
+    <section class="setup" aria-label="Configuración del juego">
+      <div class="preview-box">
+        <img id="preview" src="/img/personaje-default.svg" alt="Vista previa del personaje">
+      </div>
+      <div class="setup-form">
+        <label class="field-label" for="archivo">Personaje (imagen .jpg)</label>
+        <input type="file" id="archivo" accept=".jpg,image/jpeg" class="visually-hidden">
+        <button type="button" id="seleccionar" class="btn btn-outline">Seleccionar personaje</button>
+        <div class="fields">
+          <div class="field-color">
+            <label class="field-label" for="color">Color del tablero</label>
+            <input id="color" type="color" value="#ffffff" aria-label="Seleccionar color">
+          </div>
+          <div class="field-dimension">
+            <label class="field-label" for="dimension">Dimensión del tablero</label>
+            <input id="dimension" type="text" placeholder="3x3" value="3x3" autocomplete="off">
+            <small>Formato obligatorio: 3x3, 4x4, 5x5… hasta 9x9</small>
+          </div>
+        </div>
+        <button type="button" id="iniciar" class="btn btn-primary">Iniciar el juego</button>
+        <p id="aviso" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="zonaJuego" class="game" hidden>
+      <div class="game-heading">
+        <h2>¡Reconstruye la imagen!</h2>
+        <p>Haz clic en la pieza que esté a la izquierda, derecha, arriba o abajo del espacio vacío.</p>
+      </div>
+      <div id="tablero" role="group" aria-label="Tablero del rompecabezas"></div>
+      <p id="mensaje" role="status" aria-live="polite"></p>
+    </section>
+    <footer>REST API · Spring Boot · MySQL · JavaScript Fetch</footer>
+  </main>
+</body>
+</html>
